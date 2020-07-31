@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
+.app {
+  font-family: "Comfortaa", cursive;
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapp {
+  width: 500px;
+}
+
+.select {
+  z-index: 100;
+  width: 100%;
+  position: relative;
+}
+.select__backdrop {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+.select.open .select__backdrop {
+  display: block;
+}
+.select.open .select__dropdown {
+  display: block;
+  border-top: none;
+}
+.select.open .select__input {
+  border-bottom: none;
+}
+.select__input {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 46px;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.select__dropdown {
+  display: none;
+  position: absolute;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  top: 46px;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+}
+.select__search {
+  display: flex;
+  justify-content: center;
+}
+.select__search input {
+  width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  height: 1rem;
+}
+.select__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.select__item {
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+.select__item.selected {
+  background-color: beige;
+}
+.select__item:hover {
+  background-color: #eee;
+  cursor: pointer;
+  transition: 0.15s background-color ease-in;
+}
+
+/*# sourceMappingURL=/lena.ua.e31bb0bc.css.map */

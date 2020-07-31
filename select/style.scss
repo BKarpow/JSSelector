@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
+
+$color-border-input: #ccc;
+
+$height: 46px;
+$width: 500px;
+
+
+.app{
+  font-family: 'Comfortaa', cursive;
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapp{
+  width: $width;
+}
+
+.select{
+  z-index: 100;
+  &__backdrop{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    //background-color: blue;
+  }
+  &.open{
+    .select__backdrop{
+      display: block;
+    }
+    .select__dropdown{
+      display: block;
+      border-top: none;
+    }
+    .select__input{
+      border-bottom: none;
+    }
+  }
+  width: 100%;
+  position: relative;
+  &__input{
+    cursor: pointer;
+    border: 1px solid $color-border-input;
+    border-radius: 5px;
+    height: $height;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__dropdown{
+    display: none;
+    position: absolute;
+    border: 1px solid $color-border-input;
+    border-radius: 5px;
+    top: $height;
+    left: 0;
+    right: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 2px 3px 5px rgba(0,0,0, .3);
+  }
+  &__search{
+    //padding: 1rem;
+    display: flex;
+    justify-content: center;
+    input{
+      width: 90%;
+      border: 1px solid $color-border-input;
+      border-radius: 5px;
+      padding: 1rem;
+      height: 1rem;
+    }
+  }
+  &__list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  &__item{
+    &.selected{
+      background-color: beige;
+    }
+    padding: 1rem;
+    border-bottom: 1px solid $color-border-input;
+    &:hover{
+      background-color: #eee;
+      cursor: pointer;
+      transition: .15s background-color ease-in;
+    }
+  }
+}
