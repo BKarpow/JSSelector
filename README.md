@@ -1,14 +1,16 @@
-# JSSelector
-JavaScript - selector plagin . Vanilla JS
+# Плагин Select на чистом JavaScript
+Позволяеть генерировать сриски из масива параметров переданих в конструктор. Имеет возможность поиска.
 
-# Usage
-
-from BODY
+# Пример
+В теле документа
+```html
 <div id="select"></div>
-<script src='dist/app.js'></script>
-
-<script> 
-const sel = new Select('#select', {
+```
+Перед тегом </body>
+```javascript
+<script src="js/select.js"></script>
+<script >
+onst sel = new Select('#select', {
     placeholder: 'Выбор едемента',
     searchField: true,
     data: [
@@ -32,3 +34,24 @@ const sel = new Select('#select', {
 
 window.s = sel;
 </script>
+```
+
+Будет сгенерирован селектор 
+![Alt - скрин](https://i.ibb.co/849BM7x/index.png "Скрин")
+
+# Аргументи конструктора
+- _selector_ - css селектор на корневой елемент списка
+- _options_ - обэкт с опциями селектора
+  - _data_ - масив обэктов в формате {id: 'id', value: 'value' } 
+  - _placeholder_ - Начальний текст в селекторе (если не указан selectedId)
+  - _selectedId_ - id обэкта по у умолчания 
+  - _searchField_ - Флаг которим можно включить функцию поиска по селектору (true или false)
+  - _onSelect_ - callback - функция которая сработает при виборе елемента списка (принимает один аргумент выбраний обэкт)
+ 
+ # API методи
+ 
+ - _open()_ - октривает список селекторов
+ - _close()_ - закривает список селекторов
+ - _toggle()_ - показивает или скривает список 
+ - _select(id)_ - делает выбор (нужно указать в качестве аргумента id обэкта)
+ - _destroy()_ - уничтожает селектор.
